@@ -1,0 +1,302 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #121212; /* Dark mode background */
+    color: #e0e0e0; /* Dark mode text */
+}
+
+body.light-mode {
+    background-color: #ffffff; /* Light mode background */
+    color: #000000; /* Light mode text */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
+.header {
+    background: #1f1f1f;
+    color: #fff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle, .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: inherit;
+    margin-left: 10px;
+}
+
+/* Menu Styles */
+.menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: inherit;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 5;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero {
+    background-color: #333;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.hero p {
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+
+/* Page Styles */
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Styles */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: inherit;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: inherit;
+    color: inherit;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .theme-toggle, .menu-toggle {
+        font-size: 1.2em;
+    }
+
+    .menu {
+        top: 50px;
+        right: 0;
+        width: 100%;
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        background-color: inherit;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .form-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .theme-toggle, .menu-toggle {
+        font-size: 1.1em;
+    }
+}
+
+/* Posts Container */
+.posts-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post-card {
+    width: calc(33.333% - 20px); /* Adjust width to fit three posts per row */
+    background-color: inherit;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007bff;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles for Posts */
+@media (max-width: 768px) {
+    .post-card {
+        width: calc(50% - 20px); /* Two posts per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .post-card {
+        width: 100%; /* One post per row on small screens */
+    }
+}
